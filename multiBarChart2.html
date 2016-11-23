@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="../build/nv.d3.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js" charset="utf-8"></script>
+    <script src="../build/nv.d3.js"></script>
+
+    <style>
+        text {
+            font: 12px sans-serif;
+        }
+        svg {
+            display: block;
+        }
+        html, body, #test1, svg {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="test1">
+    <svg></svg>
+</div>
+
+<script>
+//our data
+ var test_data = function() {
+    return [
+    {
+    key: "Low SES, Low Arts",
+    values:
+    [      
+      { x : "HS Intramural sports", y : 11 },
+      { x : "HS Interscholastic sports", y : 23 },
+      { x : "HS Academic honor society",   y : 7 },  
+      { x : "HS yearbook or newspaper",   y : 7 },
+      { x : "HS No extracurricular activities",   y : 50 },
+      { x : "College Varsity Sports",   y : 8 },
+      { x : "Other college activities",   y : 28 }    
+    ]
+  },
+  {
+    key: "Low SES, High Arts",
+    values:
+    [      
+      { x : "HS Intramural sports", y : 20 },
+      { x : "HS Interscholastic sports", y : 31 },
+      { x : "HS Academic honor society",   y : 17 },
+      { x : "HS yearbook or newspaper",   y : 20 },
+      { x : "HS No extracurricular activities",   y : 24 },
+      { x : "College Varsity Sports",   y : 11 },
+      { x : "Other college activities",   y : 50 }
+
+    ]
+  },
+    {
+    key: "Overall Sample",
+    values:
+    [      
+      { x : "HS Intramural sports", y : 19 },
+      { x : "HS Interscholastic sports", y : 38 },
+      { x : "HS Academic honor society",   y : 23 },
+      { x : "HS yearbook or newspaper",   y : 16 },
+      { x : "HS No extracurricular activities",   y : 30 },
+      { x : "College Varsity Sports",   y : 15 },
+      { x : "Other college activities",   y : 56 }
+
+    ]
+  },
+    {
+    key: "High SES, Low Arts",
+    values:
+    [      
+      { x : "HS Intramural sports", y : 21 },
+      { x : "HS Interscholastic sports", y : 55 },
+      { x : "HS Academic honor society",   y : 34 },
+      { x : "HS yearbook or newspaper",   y : 12 },
+      { x : "HS No extracurricular activities",   y : 24 },
+      { x : "College Varsity Sports",   y : 23 },
+      { x : "Other college activities",   y : 64 }
+
+    ]
+  },
+    {
+    key: "High SES, High Arts",
+    values:
+    [      
+      { x : "HS Intramural sports", y : 22 },
+      { x : "HS Interscholastic sports", y : 37 },
+      { x : "HS Academic honor society",   y : 47 },
+      { x : "HS yearbook or newspaper",   y : 19 },
+      { x : "HS No extracurricular activities",   y : 5 },
+      { x : "College Varsity Sports",   y : 14 },
+      { x : "Other college activities",   y : 81 }
+
+    ]
+  }
+  ]
+ }
+   
+    nv.addGraph({
+        generate: function() {
+            var width = nv.utils.windowSize().width,
+                height = nv.utils.windowSize().height;
+            var chart = nv.models.multiBarChart()
+                .width(width)
+                .height(height)
+                .stacked(true)
+                ;
+            chart.dispatch.on('renderEnd', function(){
+                console.log('Render Complete');
+            });
+            var svg = d3.select('#test1 svg').datum(test_data);
+            console.log('calling chart');
+            svg.transition().duration(0).call(chart);
+            return chart;
+        },
+        callback: function(graph) {
+            nv.utils.windowResize(function() {
+                var width = nv.utils.windowSize().width;
+                var height = nv.utils.windowSize().height;
+                graph.width(width).height(height);
+                d3.select('#test1 svg')
+                    .attr('width', width)
+                    .attr('height', height)
+                    .transition().duration(0)
+                    .call(graph);
+            });
+        }
+    });
+</script>
+</body>
+</html>

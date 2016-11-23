@@ -1,0 +1,177 @@
+/* ==========================================================
+! Buttons
+========================================================== */
+.btn-red{
+	background:#0046b9;
+	color:#fff;
+	border:2px solid #0046b9;
+	border-radius:5px;
+}
+.btn-red:hover{
+	background:#0046b9;
+	border:2px solid #0046b9;
+}
+.btn-white:hover{
+	background:#0046b9;
+	border:2px solid #0046b9;
+}
+/* ==========================================================
+! section header
+========================================================== */
+
+ .header_line{
+	background:#0046b9;
+}
+
+/* ==========================================================
+! FEATURES
+========================================================== */
+
+.feature_i{
+
+	border:2px solid #0046b9;
+	
+}
+
+
+
+.feature_i:after {
+	
+	box-shadow: 0 0 0 2px #0046b9;
+	
+}
+.feature_i:hover {
+	background: #0046b9;
+	
+}
+
+
+.f_icon{
+	color:#0046b9;
+	
+}
+
+/* ==========================================================
+! PORTFOLIO
+========================================================== */
+
+.filter.active, .filter:hover{
+	background:#0046b9;
+  }
+  
+  .portfolio_item .port_item_cont {
+    background-color: #0046b9;
+	}
+/* ==========================================================
+! COUNTER
+========================================================== */
+.count_icon{
+	background:#0046b9;
+}
+.c_line{
+	background:#0046b9;
+}
+/* ==========================================================
+! OUR TEAM
+========================================================== */
+
+.team_item .team_item_cont {
+   
+    background-color: #0046b9;
+   
+	}
+/* ==========================================================
+ ! PRICE TABLE
+===========================================================*/
+.standout .plan_title{
+	background:#e19e2b;
+	}
+.plane_line span{
+	background:#fff;
+}
+	.standout .plan_inner{
+	background:#f6a821;
+}
+.standout .plan_inner li.label{
+	color:#fff;
+}
+.standout .plan_inner .btn_plane{
+	background:#e19e2b;
+	border:2px solid #fff;
+	}
+/* ==========================================================
+! TIMELINE
+========================================================== */	
+.timeline_container .year span{
+	background:#0046b9;
+}
+.timeline_container .timeline_item:hover{
+	background:#0046b9;
+  }
+  .timeline_container .left .timeline_item  .time_pin:before{
+	border:3px solid #0046b9;
+  }
+  
+   .timeline_container .left .timeline_item:hover:before{
+	border-color: transparent transparent transparent #0046b9;
+  }
+ .timeline_container .right .timeline_item  .time_pin:before{
+	
+	border:3px solid #0046b9;
+	
+  }
+  .timeline_container .right .timeline_item:hover:before{
+	border-color: transparent #0046b9 transparent transparent;
+	
+  }
+ .timeline_container .left .timeline_item:hover:before{
+	border-color: transparent transparent transparent #0046b9;
+	
+  }
+
+
+ /* ==========================================================
+! CONTACTS
+========================================================== */
+input[type=text]:focus, textarea:focus {
+	border-bottom:2px solid #0046b9;
+	
+}
+.inner-addon .fa {
+  color:#0046b9;
+}
+/* ==========================================================
+! GOOGLE MAP
+========================================================== */
+.map-footer{
+	background:#0046b9;
+}
+
+.social-wrap a:hover{
+	color:#0046b9;
+	border:2px solid #0046b9;
+ 
+}
+/* ==========================================================
+! COMMENTS
+========================================================== */
+.u-profile a{
+	color:#0046b9;
+}
+.flex-control-paging li a.flex-active{
+	border:2px solid #0046b9;
+}
+.flex-control-paging li a:hover {
+ border:2px solid #0046b9;
+}
+.u-comment{background-image: url(../../images/openquote1.png);}
+.u-comment > div{
+	background-image: url(../../images/closequote1.png);
+}
+/* ==========================================================
+! PURCHASE
+========================================================== */
+.purchase_i{
+	border:2px solid #0046b9;
+	
+}

@@ -179,26 +179,26 @@
     key: "Low SES, Low Arts",
     values:
     [      
-      { x : "HS Intramural sports", y : 11 },
-      { x : "HS Interscholastic sports", y : 23 },
-      { x : "HS Academic honor society",   y : 7 },  
-      { x : "HS yearbook or newspaper",   y : 7 },
-      { x : "HS No extracurricular activities",   y : 50 },
-      { x : "College Varsity Sports",   y : 8 },
-      { x : "Other college activities",   y : 28 }    
+      { x : "HS Intramural sports", y : .11 },
+      { x : "HS Interscholastic sports", y : .23 },
+      { x : "HS Academic honor society",   y : .7 },  
+      { x : "HS yearbook or newspaper",   y : .7 },
+      { x : "HS No extracurricular activities",   y : .50 },
+      { x : "College Varsity Sports",   y : .8 },
+      { x : "Other college activities",   y : .28 }    
     ]
   },
   {
     key: "Low SES, High Arts",
     values:
     [      
-      { x : "HS Intramural sports", y : 20 },
-      { x : "HS Interscholastic sports", y : 31 },
-      { x : "HS Academic honor society",   y : 17 },
-      { x : "HS yearbook or newspaper",   y : 20 },
-      { x : "HS No extracurricular activities",   y : 24 },
-      { x : "College Varsity Sports",   y : 11 },
-      { x : "Other college activities",   y : 50 }
+      { x : "HS Intramural sports", y : .20 },
+      { x : "HS Interscholastic sports", y : .31 },
+      { x : "HS Academic honor society",   y : .17 },
+      { x : "HS yearbook or newspaper",   y : .20 },
+      { x : "HS No extracurricular activities",   y : .24 },
+      { x : "College Varsity Sports",   y : .11 },
+      { x : "Other college activities",   y : .50 }
 
     ]
   },
@@ -206,13 +206,13 @@
     key: "Overall Sample",
     values:
     [      
-      { x : "HS Intramural sports", y : 19 },
-      { x : "HS Interscholastic sports", y : 38 },
-      { x : "HS Academic honor society",   y : 23 },
-      { x : "HS yearbook or newspaper",   y : 16 },
-      { x : "HS No extracurricular activities",   y : 30 },
-      { x : "College Varsity Sports",   y : 15 },
-      { x : "Other college activities",   y : 56 }
+      { x : "HS Intramural sports", y : .19 },
+      { x : "HS Interscholastic sports", y : .38 },
+      { x : "HS Academic honor society",   y : .23 },
+      { x : "HS yearbook or newspaper",   y : .16 },
+      { x : "HS No extracurricular activities",   y : .30 },
+      { x : "College Varsity Sports",   y : .15 },
+      { x : "Other college activities",   y : .56 }
 
     ]
   },
@@ -220,13 +220,13 @@
     key: "High SES, Low Arts",
     values:
     [      
-      { x : "HS Intramural sports", y : 21 },
-      { x : "HS Interscholastic sports", y : 55 },
-      { x : "HS Academic honor society",   y : 34 },
-      { x : "HS yearbook or newspaper",   y : 12 },
-      { x : "HS No extracurricular activities",   y : 24 },
-      { x : "College Varsity Sports",   y : 23 },
-      { x : "Other college activities",   y : 64 }
+      { x : "HS Intramural sports", y : .21 },
+      { x : "HS Interscholastic sports", y : .55 },
+      { x : "HS Academic honor society",   y : .34 },
+      { x : "HS yearbook or newspaper",   y : .12 },
+      { x : "HS No extracurricular activities",   y : .24 },
+      { x : "College Varsity Sports",   y : .23 },
+      { x : "Other college activities",   y : .64 }
 
     ]
   },
@@ -234,13 +234,13 @@
     key: "High SES, High Arts",
     values:
     [      
-      { x : "HS Intramural sports", y : 22 },
-      { x : "HS Interscholastic sports", y : 37 },
-      { x : "HS Academic honor society",   y : 47 },
-      { x : "HS yearbook or newspaper",   y : 19 },
-      { x : "HS No extracurricular activities",   y : 5 },
-      { x : "College Varsity Sports",   y : 14 },
-      { x : "Other college activities",   y : 81 }
+      { x : "HS Intramural sports", y : .22 },
+      { x : "HS Interscholastic sports", y : .37 },
+      { x : "HS Academic honor society",   y : .47 },
+      { x : "HS yearbook or newspaper",   y : .19 },
+      { x : "HS No extracurricular activities",   y : .5 },
+      { x : "College Varsity Sports",   y : .14 },
+      { x : "Other college activities",   y : .81 }
 
     ]
   }
@@ -257,23 +257,15 @@
                 .height(height)
                 .stacked(true)
                 ;
-            var formatPercent = d3.format(",f");
-            chart.dispatch.on('renderEnd', function(){
-                //console.log('Render Complete');
-            });
+            var formatPercent = d3.format(",%");
+            var axisLabels = document.getElementsByClassName('nv-axislabel');
+            var svg = d3.select('#test1 svg').datum(test_data);
+
             chart.color(["#6c89b8", "#000EB9", "#f28b1c", "#8ab787", "#1bb210"]);
             chart.yAxis.axisLabel("Participation");
             chart.yAxis.tickFormat(formatPercent);
-            
             chart.showControls(false).stacked(false);
-            
-            var axisLabels = document.getElementsByClassName('nv-axislabel');
-            
-           // axisLabels.text
-            //console.log(axisLabels.text);
             chart.wrapLabels(true);
-            var svg = d3.select('#test1 svg').datum(test_data);
-            //console.log('calling chart');
             svg.transition().duration(0).call(chart);
             return chart;
         },
